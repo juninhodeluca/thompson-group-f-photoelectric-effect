@@ -8,8 +8,9 @@
 ## Manuscript
 
 - **[Read the complete research paper](PAPER.md)** — scientific motivation, exact mathematical derivations, prior scholarship, optical and photoelectric physics, limitations, test program, and citations.
-- **[Source preprint (LaTeX)](paper.tex)** — editable scientific manuscript, when available.
 - **[Consistency checks](checks/check_toy_model.py)** — elementary reproducibility examples.
+
+The repository's canonical public manuscript is the Markdown paper. A separately typeset PDF is available from the accompanying ChatGPT conversation.
 
 ## Central result used in the hypothesis
 
