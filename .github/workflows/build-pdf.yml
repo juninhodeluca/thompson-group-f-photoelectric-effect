@@ -22,7 +22,7 @@ jobs:
         run: |
           sudo apt-get update -qq
           sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
-            latexmk lmodern texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended
+            latexmk lmodern poppler-utils texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended
 
       - name: Typeset and validate PDF
         run: |
