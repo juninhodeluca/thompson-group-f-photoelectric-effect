@@ -1,0 +1,46 @@
+name: Build and publish paper PDF
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - paper.tex
+      - .github/workflows/build-pdf.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out manuscript
+        uses: actions/checkout@v4
+
+      - name: Install TeX
+        run: |
+          sudo apt-get update -qq
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+            latexmk lmodern texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended
+
+      - name: Typeset and validate PDF
+        run: |
+          latexmk -pdf -interaction=nonstopmode -halt-on-error -file-line-error paper.tex
+          test -s paper.pdf
+          pdfinfo paper.pdf | grep -E '^Pages:|^Page size:'
+
+      - name: Publish generated PDF
+        env:
+          PDF_FILE: Thompson_F_Photoelectric_Effect_Hypothesis_v0.1.pdf
+        run: |
+          cp paper.pdf "$PDF_FILE"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "$PDF_FILE"
+          if git diff --cached --quiet; then
+            echo "PDF already matches the committed version"
+            exit 0
+          fi
+          git commit -m "docs: typeset and publish v0.1 research paper PDF"
+          git push origin HEAD:main
