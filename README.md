@@ -8,9 +8,11 @@
 ## Manuscript
 
 - **[Read the complete research paper](PAPER.md)** — scientific motivation, exact mathematical derivations, prior scholarship, optical and photoelectric physics, limitations, test program, and citations.
+- **[Download the PDF](Thompson_F_Photoelectric_Effect_Hypothesis_v0.1.pdf)** — author-uploaded typeset paper.
+- **[LaTeX source](paper.tex)** — reproducible typesetting source.
 - **[Consistency checks](checks/check_toy_model.py)** — elementary reproducibility examples.
 
-The repository's canonical public manuscript is the Markdown paper. A separately typeset PDF is available from the accompanying ChatGPT conversation.
+The Markdown manuscript, LaTeX source and PDF are all available in this repository. The automated GitHub Action only validates LaTeX compilation; PDF publication is manual.
 
 ## Central result used in the hypothesis
 
