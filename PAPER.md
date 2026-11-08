@@ -12,10 +12,10 @@ We investigate whether representations of Richard Thompson's group $F$—the gro
 
 We develop two precise mathematical bridges. First, a weighted-composition unitary representation of $F$ on $L^2([0,1])$ maps dyadic transformations to spatial detection probabilities. Second, in the left-regular representation on $\ell^2(F)$, normalized finite-support states obey
 
-```math
+$$
 \boxed{\left\|\lambda(s)|\psi_A\rangle-|\psi_A\rangle\right\|^2
 =\frac{|sA\triangle A|}{|A|}}.
-```
+$$
 
 This translates the Følner boundary ratio in the nonamenability theorem into Hilbert-space state displacement and, *conditionally on an optical implementation*, an interferometric visibility bound. We distinguish reversible group actions from dissipative absorption, detector back-action, environmental decoherence and Einstein's idealized photoelectric threshold $K_{\max}=h\nu-\Phi$. The original motivating analogy of an electromagnetic field as a delicate *fabric of coherence* emphasizes relational phase information, not photons as material threads. The proposed model is a falsifiable research **framework** only if a physically justified representation leads to predictions beyond ordinary wave and quantum optics. At present no such distinct physical prediction or experimental confirmation is established.
 
@@ -39,9 +39,9 @@ The conceptual proposal originated in João Paulo De Luca Jr.'s 2025 research di
 
 Let
 
-```math
+$$
 D=\{\frac{k}{2^n}:k\in\mathbb Z,\ n\in\mathbb N_0\}\cap[0,1].
-```
+$$
 
 The group $F$ consists of increasing homeomorphisms $f:[0,1]\to[0,1]$ having finitely many affine pieces, breakpoints in $D$, and slopes $2^m$, $m\in\mathbb Z$, wherever the derivative exists. Its operation is function composition $fg=f\circ g$.
 
@@ -49,15 +49,16 @@ The group $F$ consists of increasing homeomorphisms $f:[0,1]\to[0,1]$ having fin
 
 A concrete element is
 
-```math
+$$
 f_0(x)=
 \begin{cases}
 x/2,&0\le x\le 1/2,\\
 x-1/4,&1/2\le x\le3/4,\\
 2x-1,&3/4\le x\le1.
 \end{cases}
-\tag{1}
-```
+$$
+
+*Equation (1).*
 
 Its breakpoints are $1/2,3/4$, its slopes $1/2,1,2$, and it maps the respective input intervals onto $[0,1/4]$, $[1/4,1/2]$, $[1/2,1]$.
 
@@ -65,36 +66,45 @@ Its breakpoints are $1/2,3/4$, its slopes $1/2,1,2$, and it maps the respective 
 
 For a discrete group $G$, a positive normalized invariant mean is a functional
 
-```math
-M:\ell^\infty(G)\to\mathbb R,\qquad
-M(1)=1,\quad f\ge0\Rightarrow M(f)\ge0,\quad
-M(g\mapsto\varphi(sg))=M(\varphi).
-\tag{2}
-```
+$$
+\begin{aligned}
+M&:\ell^\infty(G)\longrightarrow\mathbb R,\qquad M(1)=1,\\
+f\ge 0&\Longrightarrow M(f)\ge 0,\\
+M\bigl(g\mapsto\varphi(sg)\bigr)&=M(\varphi).
+\end{aligned}
+$$
+
+*Equation (2).*
 
 The Følner criterion says amenability entails, for each finite $S\subset G$ and every $\varepsilon>0$, some nonempty finite $A\subset G$ satisfying
 
-```math
+$$
 \frac{|sA\triangle A|}{|A|}<\varepsilon
 \quad(s\in S).
-\tag{3}
-```
+$$
+
+*Equation (3).*
 
 Here $\triangle$ denotes symmetric set difference. It neither denotes photon energy loss nor a decoherence rate. OpenAI's result 248 reports and formalizes the negation in the form
 
-```math
-\exists S\Subset F,\ \exists b>0:\quad
-\forall\varnothing\ne A\Subset F,\ \exists s\in S:
+$$
+\begin{aligned}
+&\exists\, S\Subset F,\quad \exists\, b>0:\\
+&\forall\,\varnothing\ne A\Subset F,\quad
+\exists\, s\in S:\quad
 \frac{|sA\triangle A|}{|A|}\ge b.
-\tag{4}
-```
+\end{aligned}
+$$
+
+*Equation (4).*
 
 The original preprint builds recursive Hilbert-space-valued “colors” of dyadic partitions and compares scalar correlations. It also constructs a Lipschitz map on an infinite-dimensional Hilbert ball with a nonzero displacement. Its boundary parameter can be expressed, for $D>4L^2/\delta^2$, as
 
-```math
+$$
 b(D)=\frac{\delta^2/L^2-4/D}{4(1-1/D)}>0.
-\tag{5}
-```
+$$
+
+*Equation (5).*
 
 The paper constructs a displacement witness with $\delta=1/2$; $L>0$ is a Lipschitz bound. Importantly, **the existence of this abstract Hilbert-space construction does not turn its “colors” into wavelengths or its nonamenability into physical entropy.** The mathematical statement must be understood independently of our optical proposal.
 
@@ -104,17 +114,19 @@ The result was released by OpenAI on 23 September 2026 with Lean artifacts. Kim 
 
 Vaughan F. R. Jones constructed unitary representations of $F,T$ using ideas motivated by quantum-field theory and local changes of scale [3]. Brothier and Jones developed Pythagorean representations from operators $A,B$ on a Hilbert space $\mathcal K$ satisfying
 
-```math
+$$
 \boxed{A^\dagger A+B^\dagger B=I_{\mathcal K}}.
-\tag{6}
-```
+$$
+
+*Equation (6).*
 
 The map $V:\mathcal K\to\mathcal K\oplus\mathcal K$, defined by $V\xi=(A\xi,B\xi)$, preserves norm:
 
-```math
+$$
 \|A\xi\|^2+\|B\xi\|^2=\|\xi\|^2.
-\tag{7}
-```
+$$
+
+*Equation (7).*
 
 These constructions are documented in [4] and extended in [7]. Osborne and Stiegemann introduced quantum-field-like observables in a semicontinuous limit of such representations [5], and Stiegemann examined related conformal-field-theory toy models [6].
 
@@ -128,17 +140,19 @@ The original discussion objected to comparisons between electromagnetic radiatio
 
 For a vacuum monochromatic wave,
 
-```math
+$$
 \omega=2\pi\nu,\qquad k=2\pi/\lambda,\qquad c=\omega/k=\lambda\nu.
-\tag{8}
-```
+$$
+
+*Equation (8).*
 
 For a photon,
 
-```math
+$$
 E_\gamma=\hbar\omega=h\nu,\qquad p_\gamma=\frac{h}{\lambda}.
-\tag{9}
-```
+$$
+
+*Equation (9).*
 
 Photons have no rest frame; in relativity a freely propagating light ray follows a null trajectory. In a medium, the phase velocity $v_{\mathrm{ph}}=\omega/k$ is often expressed as $c/n(\omega)$, while the group velocity is $v_{\mathrm g}=d\omega/dk$. Neither automatically describes an individual photon literally slowing and then accelerating again. At an interface between stationary media, frequency is continuous; the applicable dispersion relation and wave vector change. Dispersion, absorption, scattering and decoherence are physically different processes, and reduced phase or group velocity does not necessarily imply energy dissipation.
 
@@ -146,11 +160,14 @@ Photons have no rest frame; in relativity a freely propagating light ray follows
 
 For an idealized external photoelectric process,
 
-```math
-\boxed{K_{\max}=h\nu-\Phi},\qquad
-\nu_0=\Phi/h,\qquad h\nu\ge\Phi,
-\tag{10}
-```
+$$
+\begin{aligned}
+K_{\max}&=h\nu-\Phi,\\
+\nu_0&=\frac{\Phi}{h},\qquad h\nu\ge\Phi.
+\end{aligned}
+$$
+
+*Equation (10).*
 
 where $\Phi$ is the material work function and $\nu_0$ is the threshold frequency [8]. Electronic band structure, surfaces, temperature and instrumentation complicate real measurements. No relation between $\Phi$ and a group-theoretic constant is known here. In CCD/CMOS-type devices, absorption can generate and register an electronic excitation without reconstructing the absorbed incident photon. That is a light–matter interaction, not a mathematical reordering of intervals.
 
@@ -158,50 +175,60 @@ where $\Phi$ is the material work function and $\nu_0$ is the threshold frequenc
 
 Glauber's theory describes optical coherence through field correlations, including
 
-```math
+$$
 G^{(1)}(x,t;x',t')
 =\left\langle\hat E^{(-)}(x,t)\hat E^{(+)}(x',t')\right\rangle.
-\tag{11}
-```
+$$
+
+*Equation (11).*
 
 Normally ordered higher-order functions govern coincidence probabilities [9]. More generally, for a state $\rho$ and a positive-operator-valued measure (POVM),
 
-```math
-P(j|\rho)=\operatorname{Tr}(\rho E_j),\qquad
-E_j\succeq0,\qquad \sum_j E_j=I.
-\tag{12}
-```
+$$
+\begin{aligned}
+P(j\mid\rho)&=\mathrm{Tr}(\rho E_j),\\
+E_j&\succeq0,\qquad \sum_j E_j=I.
+\end{aligned}
+$$
+
+*Equation (12).*
 
 If a unitary representation $U(g)$ acts before detection,
 
-```math
-P(j|g,\rho)=\operatorname{Tr}\!\left(U(g)\rho U(g)^\dagger E_j\right).
-\tag{13}
-```
+$$
+P(j|g,\rho)=\mathrm{Tr}\!\left(U(g)\rho U(g)^\dagger E_j\right).
+$$
+
+*Equation (13).*
 
 “Observation” here means a physical interaction and a measurement record; consciousness is not required.
 
 For two optical paths, take
 
-```math
+$$
 |\psi\rangle=\alpha|0\rangle+\beta|1\rangle,\qquad
 |\alpha|^2+|\beta|^2=1.
-\tag{14}
-```
+$$
+
+*Equation (14).*
 
 Which-path information can become correlated with the environment:
 
-```math
-|\Psi\rangle=\alpha|0\rangle|e_0\rangle+\beta|1\rangle|e_1\rangle.
-\tag{15}
-```
+$$
+|\Psi\rangle
+=\alpha|0\rangle|e_0\rangle
++\beta|1\rangle|e_1\rangle.
+$$
+
+*Equation (15).*
 
 Tracing over the environment yields
 
-```math
+$$
 \rho_{01}=\alpha\beta^*\langle e_1|e_0\rangle.
-\tag{16}
-```
+$$
+
+*Equation (16).*
 
 When the environmental records are orthogonal, the off-diagonal coherence vanishes in this basis [10,11]. The total state need not have lost purity. Decoherence is **not** identical to absorption, and neither result alone determines a preferred interpretation of wavefunction collapse.
 
@@ -215,46 +242,54 @@ An additional analogy considers gas initially in equilibrium. A local interactio
 
 Take $\mathcal H_x=L^2([0,1],dx;\mathbb C)$. For $f\in F$, define the weighted-composition operator
 
-```math
+$$
 \boxed{(U_f\psi)(x)=\sqrt{(f^{-1})'(x)}\,\psi(f^{-1}(x))}
 \quad\text{almost everywhere}.
-\tag{17}
-```
+$$
+
+*Equation (17).*
 
 A change of variables proves unitarity and the representation property:
 
-```math
+$$
 \int_0^1|U_f\psi(x)|^2dx=\int_0^1|\psi(y)|^2dy,\qquad
 U_fU_g=U_{f\circ g}.
-\tag{18}
-```
+$$
+
+*Equation (18).*
 
 For an ideal spatial detection bin $I$,
 
-```math
-\boxed{P(I|f,\psi)=\int_I|U_f\psi(x)|^2dx
-=\int_{f^{-1}(I)}|\psi(y)|^2dy}.
-\tag{19}
-```
+$$
+\begin{aligned}
+P(I\mid f,\psi)
+&=\int_I |U_f\psi(x)|^2\,dx\\
+&=\int_{f^{-1}(I)} |\psi(y)|^2\,dy.
+\end{aligned}
+$$
+
+*Equation (19).*
 
 **Worked dyadic example.** Choose the $f_0$ of Eq. (1) and normalized uniform input $\psi(x)=1$. For bins $I_1=[0,1/4]$, $I_2=[1/4,1/2]$, $I_3=[1/2,1]$,
 
-```math
+$$
 |U_{f_0}\psi(x)|^2=
 \begin{cases}
 2,&x\in I_1,\\
 1,&x\in I_2,\\
 1/2,&x\in I_3.
 \end{cases}
-\tag{20}
-```
+$$
+
+*Equation (20).*
 
 The corresponding probabilities change from $(1/4,1/4,1/2)$ before the transformation to
 
-```math
+$$
 \boxed{(P_1,P_2,P_3)=(1/2,1/4,1/4)}
-\tag{21}
-```
+$$
+
+*Equation (21).*
 
 afterward, and still sum to one. This is an **exact, simple optical-mode correspondence**, conditional on implementing the unitary. It is not evidence for nonamenability, since it uses only one group element, nor does it derive an electron-emission threshold.
 
@@ -262,61 +297,73 @@ afterward, and still sum to one. This is an **exact, simple optical-mode corresp
 
 Consider the left-regular representation of $F$ on $\ell^2(F)$, whose orthonormal basis consists of vectors $|g\rangle$, $g\in F$. Define
 
-```math
-\lambda(s)|g\rangle=|sg\rangle,\qquad
-|\psi_A\rangle=\frac{1}{\sqrt{|A|}}\sum_{g\in A}|g\rangle
-\tag{22}
-```
+$$
+\begin{aligned}
+\lambda(s)|g\rangle&=|sg\rangle,\\
+|\psi_A\rangle&=\frac{1}{\sqrt{|A|}}\sum_{g\in A}|g\rangle.
+\end{aligned}
+$$
+
+*Equation (22).*
 
 for every finite nonempty $A\subset F$.
 
 **Proposition 1 (finite-support displacement identity).** For each $s\in F$,
 
-```math
+$$
 \langle\psi_A|\lambda(s)|\psi_A\rangle
 =\frac{|A\cap sA|}{|A|}
-\tag{23}
-```
+$$
+
+*Equation (23).*
 
 and
 
-```math
+$$
 \boxed{\|\lambda(s)|\psi_A\rangle-|\psi_A\rangle\|^2
 =\frac{|sA\triangle A|}{|A|}}.
-\tag{24}
-```
+$$
+
+*Equation (24).*
 
 **Derivation.** Orthonormality gives Eq. (23). Since both vectors have unit norm, the squared distance equals $2-2|A\cap sA|/|A|$. The equality $|sA|=|A|$ implies $|sA\triangle A|=2|A|-2|A\cap sA|$; substitution yields Eq. (24).
 
 **Important qualification:** Eq. (24) holds for *every discrete group* in its left-regular representation. This identity is not a new proof of nonamenability and not a special mathematical property of $F$. What is special, assuming the theorem [1], is the uniform quantifier structure of Eq. (4). Together these imply
 
-```math
+$$
 \forall\varnothing\ne A\Subset F,\ \exists s\in S:
 \quad\|\lambda(s)|\psi_A\rangle-|\psi_A\rangle\|\ge\sqrt b
-\tag{25}
-```
+$$
+
+*Equation (25).*
 
 and
 
-```math
+$$
 \frac{|A\cap sA|}{|A|}\le1-\frac b2.
-\tag{26}
-```
+$$
+
+*Equation (26).*
 
 **Conditional optical reading.** If an apparatus can prepare mutually orthogonal modes $|g\rangle$ and coherently apply $\lambda(s)$, a balanced two-arm interferometer comparing $|\psi_A\rangle$ with $\lambda(s)|\psi_A\rangle$ ideally gives fringe visibility
 
-```math
-V_{s,A}=\left|\langle\psi_A|\lambda(s)|\psi_A\rangle\right|
-=\frac{|A\cap sA|}{|A|}.
-\tag{27}
-```
+$$
+\begin{aligned}
+V_{s,A}
+&=\bigl|\langle\psi_A|\lambda(s)|\psi_A\rangle\bigr|\\
+&=\frac{|A\cap sA|}{|A|}.
+\end{aligned}
+$$
+
+*Equation (27).*
 
 Thus at least one element of the fixed finite set $S$ would satisfy
 
-```math
+$$
 \boxed{V_{s,A}\le1-b/2}
-\tag{28}
-```
+$$
+
+*Equation (28).*
 
 for each prepared **equal-phase finite-support state** of Eq. (22). This is *not* a bound on arbitrary coherent superpositions and does not assert spontaneous decoherence. Measuring a visibility is possible in principle, but realizing the required mode index set and prescribed transformations may be exceptionally demanding. A finite approximation does not prove a property quantified over all finite subsets of an infinite group.
 
@@ -326,11 +373,12 @@ Moreover, such overlap measurements can be reproduced using classical coherent f
 
 The same identity applies to the amenable additive group $\mathbb Z$. With $A_N=\{-N,\ldots,N\}$ and shift $s=1$,
 
-```math
+$$
 \frac{|(A_N+1)\triangle A_N|}{|A_N|}
 =\frac{2}{2N+1}\longrightarrow0.
-\tag{29}
-```
+$$
+
+*Equation (29).*
 
 This negative control blocks an overinterpretation: observing *some* nonzero displacement or interference change is commonplace, even for amenable groups. It is the **universal finite-set obstruction for one fixed finite family of translations** that distinguishes nonamenability.
 
@@ -340,11 +388,14 @@ The Pythagorean splitting in Eqs. (6)–(7), the coordinate map in Eqs. (17)–(
 
 For an optical mode $\psi$, transformed by $U_f$, with detector bin $I_j$ and photon-frequency-dependent efficiency $\eta_j(\nu)$, an idealized single-photon model is
 
-```math
-\boxed{P(\mathrm{click\ in}\ I_j|f,\nu,\psi)
-=\eta_j(\nu)\int_{I_j}|U_f\psi(x)|^2dx}.
-\tag{30}
-```
+$$
+\begin{aligned}
+P(\text{click in }I_j\mid f,\nu,\psi)
+&=\eta_j(\nu)\int_{I_j}|U_f\psi(x)|^2\,dx.
+\end{aligned}
+$$
+
+*Equation (30).*
 
 A separate no-click outcome ensures normalization of all outcomes. For an idealized external photoelectric model one may set $\eta_j(\nu)=0$ below the threshold $h\nu<\Phi$, while real devices have spectral response and material-specific complications. Spatial redistribution in Eq. (30) affects **where an incident excitation can be registered**; the threshold in Eq. (10) determines **whether photoemission is energetically permitted**. There is no justified derivation of $\Phi$ from the group $F$ here.
 
