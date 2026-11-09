@@ -3,37 +3,37 @@
 ## A Dyadic-Symmetry Correspondence Hypothesis and Testable Research Program
 
 **João Paulo De Luca Jr.** — Independent research  
-**Working hypothesis paper, version 0.1 — 8 November 2026**  
-**Status:** Not peer reviewed. No experimental evidence of a new physical mechanism is claimed. Mathematical and literature synthesis assisted by ChatGPT (OpenAI), acknowledged below.
+**Working hypothesis paper, version 0.2 — 9 November 2026**  
+**Status:** Working hypothesis; not peer reviewed. This version presents mathematical models and a verification program. No new experimental data are reported.
 
 ### Abstract
 
-We investigate whether representations of Richard Thompson's group $F$—the group of increasing dyadic piecewise-linear homeomorphisms of the unit interval—can furnish a useful structural language for coherence redistribution and quantum photodetection, with the photoelectric effect as a proposed physical context. A September 2026 OpenAI preprint reports a Lean-formalized proof that $F$ is nonamenable; independent work by Jones, Brothier, Osborne, Stiegemann, Wijesena and collaborators provides a pre-existing connection between Thompson groups and mathematical quantum-field constructions. These facts motivate an investigation, but do **not** establish a new microscopic theory of photoemission.
+Can representations of Thompson's group $F$ describe optical transformations and their photoelectric readouts? We approach this question through dyadic interval maps, normalized states and detector probabilities. The mathematical starting point is the group of increasing dyadic piecewise-linear homeomorphisms of the unit interval. OpenAI's September 2026 preprint reports its nonamenability [1,2]. Earlier work connects Thompson-group representations with quantum models and field-like observables [3–7].
 
-We develop two precise mathematical bridges. First, a weighted-composition unitary representation of $F$ on $L^2([0,1])$ maps dyadic transformations to spatial detection probabilities. Second, in the left-regular representation on $\ell^2(F)$, normalized finite-support states obey
+We use two constructions. A weighted-composition representation on $L^2([0,1])$ describes changes in spatial detection probabilities. The left-regular representation on $\ell^2(F)$ describes state displacement through the identity
 
 $$
 \boxed{\left\|\lambda(s)|\psi_A\rangle-|\psi_A\rangle\right\|^2
 =\frac{|sA\triangle A|}{|A|}}.
 $$
 
-This translates the Følner boundary ratio in the nonamenability theorem into Hilbert-space state displacement and, *conditionally on an optical implementation*, an interferometric visibility bound. We distinguish reversible group actions from dissipative absorption, detector back-action, environmental decoherence and Einstein's idealized photoelectric threshold $K_{\max}=h\nu-\Phi$. The original motivating analogy of an electromagnetic field as a delicate *fabric of coherence* emphasizes relational phase information, not photons as material threads. The proposed model is a falsifiable research **framework** only if a physically justified representation leads to predictions beyond ordinary wave and quantum optics. At present no such distinct physical prediction or experimental confirmation is established.
+The identity relates a finite-set boundary ratio to the distance between normalized Hilbert-space vectors. With a specified optical encoding, the same overlap determines ideal interferometric visibility. We then introduce a separate detector response and the photoelectric threshold $K_{\max}=h\nu-\Phi$. The proposed relation is descriptive: the representation of $F$ organizes the optical transformations, while the detector model supplies the light–matter response. Its physical implementation remains to be tested.
 
 **Keywords:** Thompson's group F; nonamenability; photoelectric effect; quantum optics; dyadic partitions; interferometry; coherence; photon detection; Hilbert-space representations; Følner condition.
 
-## 1. Scope, evidence levels and provenance
+## 1. Scope and research question
 
-The hypothesis is **not** that $F$ is a photon or that its nonamenability *causes* the photoelectric effect. The precise question is whether a representation of $F$, together with its all-finite-support uniform-displacement property, could provide a mathematically informative organization of optical transformations and photodetection statistics.
+We ask whether a representation of $F$ can describe the redistribution of optical coherence and the resulting photoelectric detection statistics. To make the question concrete, we specify the states, transformations and measured probabilities. We also examine how the finite-set obstruction associated with nonamenability appears in one particular representation.
 
-Three categories must remain separate:
+The investigation uses three bodies of work:
 
-| Category | Established contribution | Not established |
+| Basis | Role in the model | Sources |
 |---|---|---|
-| Group mathematics | Dyadic homeomorphisms; OpenAI's reported and Lean-formalized nonamenability proof [1]; a human-written exposition [2] | Direct physical interpretation of nonamenability |
-| Quantum-mathematical literature | Unitary Thompson-group representations, tensor networks, quantum-field-like correlations [3–7] | A theorem identifying $F$ with light or absorption |
-| Experimental physics | Quantized electromagnetic excitation, photoemission threshold, quantum optical correlation functions [8–11] | Any experimentally confirmed need for $F$ to explain photodetection |
+| Group theory | Dyadic transformations, representations and the reported nonamenability result | [1,2] |
+| Quantum mathematics | Unitary representations, isometric splitting and field-like correlations | [3–7] |
+| Optical and photoelectric physics | Energy thresholds, detector response and optical correlations | [8–11] |
 
-The conceptual proposal originated in João Paulo De Luca Jr.'s 2025 research dialogue with ChatGPT, particularly his objections to the massiveness of mechanical water-wave analogies, his fragile-textile and quiescent-gas comparisons, and questions about photons in matter, CCD/CMOS detection, energy transfer and loss of interference [12]. The dialogue is cited for provenance, **not** as experimentally validated physics.
+We begin with the mathematical structure, introduce the optical quantities and then join the two through explicit probability models. The proposed experiments test those models under stated assumptions.
 
 ## 2. Thompson's group F and its mathematical meaning
 
@@ -45,7 +45,7 @@ $$
 
 The group $F$ consists of increasing homeomorphisms $f:[0,1]\to[0,1]$ having finitely many affine pieces, breakpoints in $D$, and slopes $2^m$, $m\in\mathbb Z$, wherever the derivative exists. Its operation is function composition $fg=f\circ g$.
 
-“Dyadic piecewise” refers to interval subdivision; it does **not** describe photons breaking into particles. “Linear homeomorphism” describes a reversible, continuous bijection with continuous inverse; a physical process such as photon absorption is generally not modeled by this reversible map alone. The letter $F$ is a historical mathematical label, not an abbreviation of “photon.”
+Dyadic subdivision provides a hierarchy of interval scales. Each group element is reversible: it is a continuous bijection with a continuous inverse. Absorption and the electronic detector record enter through the separate response model in Section 7.
 
 A concrete element is
 
@@ -62,7 +62,7 @@ $$
 
 Its breakpoints are $1/2,3/4$, its slopes $1/2,1,2$, and it maps the respective input intervals onto $[0,1/4]$, $[1/4,1/2]$, $[1/2,1]$.
 
-### 2.1 Amenability is not chaos
+### 2.1 Amenability and finite-set displacement
 
 For a discrete group $G$, a positive normalized invariant mean is a functional
 
@@ -85,7 +85,7 @@ $$
 
 *Equation (3).*
 
-Here $\triangle$ denotes symmetric set difference. It neither denotes photon energy loss nor a decoherence rate. OpenAI's result 248 reports and formalizes the negation in the form
+Here $\triangle$ denotes symmetric set difference. The numerator counts elements belonging to exactly one of $sA$ and $A$. Nonamenability is equivalent to a uniform obstruction of the following form, used here with the reported result for $F$ [1]:
 
 $$
 \begin{aligned}
@@ -98,7 +98,7 @@ $$
 
 *Equation (4).*
 
-The original preprint builds recursive Hilbert-space-valued “colors” of dyadic partitions and compares scalar correlations. It also constructs a Lipschitz map on an infinite-dimensional Hilbert ball with a nonzero displacement. Its boundary parameter can be expressed, for $D>4L^2/\delta^2$, as
+Here $A\Subset F$ means that $A$ is a finite subset of $F$. The original preprint builds recursive Hilbert-space-valued “colors” of dyadic partitions and compares scalar correlations. It also constructs a Lipschitz map on an infinite-dimensional Hilbert ball with a nonzero displacement. Its boundary parameter can be expressed, for an integer $D>4L^2/\delta^2$, as
 
 $$
 b(D)=\frac{\delta^2/L^2-4/D}{4(1-1/D)}>0.
@@ -106,11 +106,11 @@ $$
 
 *Equation (5).*
 
-The paper constructs a displacement witness with $\delta=1/2$; $L>0$ is a Lipschitz bound. Importantly, **the existence of this abstract Hilbert-space construction does not turn its “colors” into wavelengths or its nonamenability into physical entropy.** The mathematical statement must be understood independently of our optical proposal.
+The preprint constructs a displacement witness with $\delta=1/2$ and an associated Lipschitz bound $L>0$. Its Hilbert-space-valued “colors” are vectors used in the proof. An optical interpretation requires a separate assignment of physical modes and operations.
 
-The result was released by OpenAI on 23 September 2026 with Lean artifacts. Kim and Lodha's 13 October 2026 note [2] provides a human-written exposition. This manuscript has not independently rebuilt Lean or established full external peer-review acceptance.
+The OpenAI preprint is dated 23 September 2026. Kim and Lodha’s note, submitted on 13 October 2026, provides a human-written exposition [2]. The Lean scope document states nonamenability without specifying a boundary constant or a prescribed generating set [1]. We use the reported theorem as a premise; we have not independently rebuilt its formalization.
 
-## 3. Why investigating a quantum connection is scientifically legitimate
+## 3. Representations and quantum models
 
 Vaughan F. R. Jones constructed unitary representations of $F,T$ using ideas motivated by quantum-field theory and local changes of scale [3]. Brothier and Jones developed Pythagorean representations from operators $A,B$ on a Hilbert space $\mathcal K$ satisfying
 
@@ -130,13 +130,13 @@ $$
 
 These constructions are documented in [4] and extended in [7]. Osborne and Stiegemann introduced quantum-field-like observables in a semicontinuous limit of such representations [5], and Stiegemann examined related conformal-field-theory toy models [6].
 
-Equation (6) also permits an interpretation as two positive effects $E_0=A^\dagger A$ and $E_1=B^\dagger B$, satisfying $E_0+E_1=I$. This is an **operator-theoretic analogy** to a complete two-outcome quantum measurement. It does not mean the original mathematical operators were designed as photocathodes or detectors. The prior literature establishes a legitimate formal bridge; it does not identify nonamenability as the cause of wave–particle duality or the photoelectric effect.
+Set $E_0=A^\dagger A$ and $E_1=B^\dagger B$. These are positive operators with $E_0+E_1=I$, so they also define a complete two-outcome POVM. This common normalization gives a way to compare isometric splitting with quantum measurement. A detector interpretation still requires a physical model for the operators.
 
-## 4. The physics that the hypothesis must respect
+## 4. Optical quantities and detector response
 
-### 4.1 Light is not a mechanical water wave
+### 4.1 Propagation and optical frequency
 
-The original discussion objected to comparisons between electromagnetic radiation and the motion of large quantities of water. Such comparisons can illustrate wavelength and interference, but they can misleadingly suggest that the electromagnetic field is a massive substance undulating in a background medium.
+Water-wave comparisons illustrate wavelength and interference. An electromagnetic description also needs frequency, phase and field correlations. These quantities let us state the proposed correspondence directly.
 
 For a vacuum monochromatic wave,
 
@@ -154,11 +154,11 @@ $$
 
 *Equation (9).*
 
-Photons have no rest frame; in relativity a freely propagating light ray follows a null trajectory. In a medium, the phase velocity $v_{\mathrm{ph}}=\omega/k$ is often expressed as $c/n(\omega)$, while the group velocity is $v_{\mathrm g}=d\omega/dk$. Neither automatically describes an individual photon literally slowing and then accelerating again. At an interface between stationary media, frequency is continuous; the applicable dispersion relation and wave vector change. Dispersion, absorption, scattering and decoherence are physically different processes, and reduced phase or group velocity does not necessarily imply energy dissipation.
+A photon has no rest frame. In a medium, the phase velocity is $v_{\mathrm{ph}}=\omega/k$, often written as $c/n(\omega)$, while the group velocity is $v_{\mathrm g}=d\omega/dk$. At an interface between stationary media, frequency is conserved and the wave vector changes according to the dispersion relation. Phase velocity, group velocity, absorption and loss of coherence describe different aspects of propagation.
 
-### 4.2 The actual photoelectric effect
+### 4.2 Photoelectric threshold
 
-For an idealized external photoelectric process,
+For idealized external photoemission in the single-photon regime,
 
 $$
 \begin{aligned}
@@ -169,9 +169,9 @@ $$
 
 *Equation (10).*
 
-where $\Phi$ is the material work function and $\nu_0$ is the threshold frequency [8]. Electronic band structure, surfaces, temperature and instrumentation complicate real measurements. No relation between $\Phi$ and a group-theoretic constant is known here. In CCD/CMOS-type devices, absorption can generate and register an electronic excitation without reconstructing the absorbed incident photon. That is a light–matter interaction, not a mathematical reordering of intervals.
+Here $\Phi$ is the material work function and $\nu_0$ is the threshold frequency [8]. Real measurements also depend on band structure, the surface, temperature and the instrument. In CCD/CMOS devices, absorbed light can generate an electronic excitation that is subsequently registered. This internal detector response differs from external electron emission.
 
-### 4.3 Quantum optical detection, observation and decoherence
+### 4.3 Detection probabilities and coherence
 
 Glauber's theory describes optical coherence through field correlations, including
 
@@ -201,7 +201,7 @@ $$
 
 *Equation (13).*
 
-“Observation” here means a physical interaction and a measurement record; consciousness is not required.
+The detector outcome is a physical measurement record.
 
 For two optical paths, take
 
@@ -230,13 +230,13 @@ $$
 
 *Equation (16).*
 
-When the environmental records are orthogonal, the off-diagonal coherence vanishes in this basis [10,11]. The total state need not have lost purity. Decoherence is **not** identical to absorption, and neither result alone determines a preferred interpretation of wavefunction collapse.
+Orthogonal environmental records make the off-diagonal term vanish in this basis [10,11]. The combined system can remain pure while the reduced optical state loses coherence. Absorption requires its own light–matter interaction model.
 
 ### 4.4 The “fragile fabric” and “quiescent gas” analogies
 
-In 2025, João Paulo De Luca Jr. proposed a more delicate image than waves on a lake: **a piece of fabric whose apparent integrity depends on relationships among threads**, so that disturbing a thread can change the macroscopic pattern. The physically useful counterpart is the dependence of interference on phase-sensitive correlations, such as Eq. (16)—not a hypothesis that photons are connected physical fibers, or that removing any one photon must unravel an entire wave.
+The fragile-fabric analogy focuses on relationships: a visible pattern depends on how its parts are connected, and a local disturbance can change that pattern. For optical coherence, Eq. (16) gives a precise counterpart: the interference term depends on the overlap between environmental states. The analogy concerns correlations; it does not assign material threads to photons.
 
-An additional analogy considers gas initially in equilibrium. A local interaction may change the collective statistical description, illustrating why a large-scale pattern can be sensitive to microscopic events. But this does **not** prove that entropy increases in every conditioned quantum measurement. Both analogies are conceptual entry points; their validity is limited by the actual equations.
+A gas distribution offers a second image for the effect of a local interaction on collective behavior. It motivates a question about sensitivity and statistical description. Any prediction about optical coherence or entropy must then follow from the specified state and dynamics.
 
 ## 5. Mathematical model I: spatial optical modes
 
@@ -291,7 +291,7 @@ $$
 
 *Equation (21).*
 
-afterward, and still sum to one. This is an **exact, simple optical-mode correspondence**, conditional on implementing the unitary. It is not evidence for nonamenability, since it uses only one group element, nor does it derive an electron-emission threshold.
+afterward. The probabilities still sum to one. This example describes spatial redistribution under a specified unitary map; a device implementing that map can be tested against these bin weights.
 
 ## 6. Mathematical model II: nonamenability and interferometric state displacement
 
@@ -328,7 +328,7 @@ $$
 
 **Derivation.** Orthonormality gives Eq. (23). Since both vectors have unit norm, the squared distance equals $2-2|A\cap sA|/|A|$. The equality $|sA|=|A|$ implies $|sA\triangle A|=2|A|-2|A\cap sA|$; substitution yields Eq. (24).
 
-**Important qualification:** Eq. (24) holds for *every discrete group* in its left-regular representation. This identity is not a new proof of nonamenability and not a special mathematical property of $F$. What is special, assuming the theorem [1], is the uniform quantifier structure of Eq. (4). Together these imply
+Equation (24) holds for every discrete group in its left-regular representation. The role of nonamenability enters through the quantifiers in Eq. (4): one fixed finite set $S$ and one positive bound must work for every finite nonempty $A$. Together, Eqs. (4) and (24) imply
 
 $$
 \forall\varnothing\ne A\Subset F,\ \exists s\in S:
@@ -365,9 +365,9 @@ $$
 
 *Equation (28).*
 
-for each prepared **equal-phase finite-support state** of Eq. (22). This is *not* a bound on arbitrary coherent superpositions and does not assert spontaneous decoherence. Measuring a visibility is possible in principle, but realizing the required mode index set and prescribed transformations may be exceptionally demanding. A finite approximation does not prove a property quantified over all finite subsets of an infinite group.
+for each equal-phase finite-support state of Eq. (22), with $s$ allowed to depend on $A$. The restriction to this state family matters. A finite optical implementation tests its encoded states and transformations; it does not establish a statement over all finite subsets of the infinite group.
 
-Moreover, such overlap measurements can be reproduced using classical coherent fields as well as single photons. Without an independently specified photon-specific effect beyond ordinary quantum optics, the experiment would demonstrate a group representation rather than a new photoelectric law.
+The same overlap can be measured with coherent classical fields. Comparing classical-field and single-photon implementations is therefore part of the proposed verification program.
 
 ### 6.1 Amenable negative control
 
@@ -380,7 +380,7 @@ $$
 
 *Equation (29).*
 
-This negative control blocks an overinterpretation: observing *some* nonzero displacement or interference change is commonplace, even for amenable groups. It is the **universal finite-set obstruction for one fixed finite family of translations** that distinguishes nonamenability.
+Here the boundary ratio approaches zero as the support grows. The comparison shows why a nonzero displacement in one experiment does not distinguish amenability. The relevant question is whether a fixed finite family enforces a positive bound for every finite support.
 
 ## 7. Joining optical probability distributions to photoelectric readouts
 
@@ -397,52 +397,36 @@ $$
 
 *Equation (30).*
 
-A separate no-click outcome ensures normalization of all outcomes. For an idealized external photoelectric model one may set $\eta_j(\nu)=0$ below the threshold $h\nu<\Phi$, while real devices have spectral response and material-specific complications. Spatial redistribution in Eq. (30) affects **where an incident excitation can be registered**; the threshold in Eq. (10) determines **whether photoemission is energetically permitted**. There is no justified derivation of $\Phi$ from the group $F$ here.
+Assume $0\le\eta_j(\nu)\le1$ and bins that partition the coordinate interval. Adding a no-click outcome normalizes the probabilities. For an idealized external photoelectric detector, set $\eta_j(\nu)=0$ when $h\nu<\Phi$. Above threshold, the response depends on the material and device. The integral describes where an excitation is registered; the response function describes its detection efficiency, and Eq. (10) gives the maximum emitted-electron energy in the idealized regime.
 
-A complete microscopic theory would need a light–matter Hamiltonian and open-system/detector dynamics. It would have to distinguish coherent unitary transformations of the incoming field from the irreversible electronic record. Consequently, proposing an operational analogy is reasonable; declaring group nonamenability the mechanism behind the photoelectric effect is not supported.
+Together, these components describe a photoelectric readout for a specified optical state. The representation of $F$ supplies the spatial transformation; the detector response supplies absorption and registration. The work function is an input from the material model. A microscopic extension would need a light–matter Hamiltonian and the dynamics of the electronic record.
 
-## 8. Semantics and scientific interpretation
+## 8. Structural terms and optical interpretation
 
-| Phrase in result 248 | Original prompting association | Scientifically defensible meaning |
+| Mathematical expression | Structure it describes | Proposed optical role |
 |---|---|---|
-| Thompson's group $F$ | F → photon | Conventional group name; not a particle designation |
-| Dyadic piecewise | Fragments, corpuscular pieces | Binary rational subintervals, not physical photon fragments |
-| Linear homeomorphisms of the interval | Transformation of light | Reversible maps that *can be represented* on optical-mode Hilbert spaces |
-| Nonamenable | Chaotic or disordered outcome | Failure of invariant averaging / Følner condition; not chaos, decoherence or entropy |
-| Recursive colors and Hilbert correlations | Spectral or coherence structure | Abstract vectors and inner products in a proof, not already optical measurements |
+| Dyadic piecewise | Binary rational subintervals | A hierarchy of spatial bins |
+| Increasing piecewise-linear homeomorphisms | Reversible interval maps | Unitary transformations of optical modes |
+| Nonamenability | Failure of the Følner approximation | A conditional displacement bound in the left-regular representation |
+| Recursive colors and Hilbert correlations | Vectors and inner products in the proof | A prompt to specify physical modes and measurable correlations |
 
-The original language was a **heuristic** that prompted model building, not evidence of a hidden euphemism for the photoelectric effect. Strong scientific support must come from exact mappings, coherent theoretical assumptions and tests.
+The table identifies the level of each correspondence. A physical implementation must specify how a mode, a group action and a measured outcome are related. Sections 5–7 give candidate descriptions that can be checked mathematically and tested in an optical setup.
 
 ## 9. Proposed verification program
 
-**Phase A — mathematical reproduction.** Check Eqs. (17)–(29) analytically and computationally, specify precisely which operations form a group action, and distinguish finite examples from the all-finite-subset theorem. Review the formalization and independent mathematical literature before using Eq. (4) as a foundational premise.
+**Phase A — mathematical reproduction.** Check Eqs. (17)–(29) analytically and computationally. State which operations implement the group action and which are finite approximations. Review the formalization and the mathematical literature. A numerical test of the uniform bound also needs a concrete set $S$ and a justified value of $b$; these are not supplied by the published Lean scope statement [1].
 
-**Phase B — optical engineering.** Encode normalized amplitudes in dyadic transverse modes; approximate selected unitary maps $U_f$ with calibrated optical networks; measure the predicted detection-bin weights and interference overlap with both coherent classical fields and low-flux/single-photon sources. Report optical loss, imperfect mode matching, detector efficiency, statistical errors and calibration procedures.
+**Phase B — optical implementation.** Encode normalized amplitudes in dyadic transverse modes and approximate selected maps $U_f$ with calibrated optical networks. Measure detection-bin weights and interference overlap using both coherent classical fields and single-photon sources. Report optical loss, mode matching, detector efficiency, statistical uncertainty and calibration.
 
-**Phase C — physical discrimination.** A new physical interpretation would require: (i) a principled, experimentally justified reason that an appropriate representation of $F$ is physically selected; (ii) coupling to absorption and electron degrees of freedom that preserves energy and recovers $K_{\max}=h\nu-\Phi$; (iii) a quantitative prediction *not already implied* by conventional electrodynamics or quantum photodetection; (iv) independent replication; and (v) conditions that would falsify the claim.
+**Phase C — detector response and physical specificity.** Couple the optical description to absorption and electronic degrees of freedom. Check energy conservation, the material work function and the regime in which $K_{\max}=h\nu-\Phi$ applies. Compare the predicted counts and emitted-electron energies with conventional photodetection theory. A claim beyond a descriptive correspondence would require an additional quantitative prediction, a control that distinguishes it from the conventional model and conditions under which it fails.
 
-A failure to obtain a novel discriminating prediction does not invalidate the mathematical calculations; it limits their interpretation to an alternative **representation/modeling framework**, not a new mechanism of photoemission.
-
-## 10. Preliminary conclusions
-
-1. **The strongest mathematical evidence is structural.** Existing Thompson-group representations support precise formulations of quantum-style states and correlations; operator norm conservation is compatible with branch-like measurement formalisms.
-2. **A rigorous correspondence exists at the level of selected Hilbert-space models.** The Følner ratio equals the squared displacement of normalized finite-support vectors; under an engineered optical encoding, it becomes an ideal interferometric overlap. This does not independently predict physical behavior.
-3. **A simple dyadic optical example is reproducible.** A specific group element changes spatial detection probabilities from $(1/4,1/4,1/2)$ to $(1/2,1/4,1/4)$ without changing total probability.
-4. **The photoelectric threshold is not derived.** The mechanism of electron emission requires light–matter coupling and the material work function; group operations are not an alternative to these physical laws.
-5. **No new experimental evidence has been obtained.** There is no current basis to identify the nonamenability of $F$ as the cause or real-world identity of the photoelectric effect.
-6. **The hypothesis is research-worthy if made operational.** The next substantive step is an experimentally motivated representation and a *discriminating* prediction, not a stronger verbal analogy.
-
-## 11. Conclusion
-
-The investigation began with objections to comparing radiation too literally with water waves and with the analogy of a fragile textile whose patterns depend on underlying correlations. It evolved into a precise mathematical question prompted by OpenAI's 2026 nonamenability preprint and the existing quantum-representation literature. Equations (17)–(30) connect dyadic transformations, normalized optical modes, finite-state displacements, conditional visibility and detector statistics under explicit assumptions.
-
-The proposed *correspondence* is mathematically meaningful and is suitable for critical evaluation by mathematicians and quantum-optics researchers. **It is not a demonstrated equivalence, a proven explanation of the photoelectric effect, or experimental confirmation of a new physical law.** Publishing it as an articulated hypothesis invites exactly the independent review necessary to decide whether the mathematics can yield new, physically distinctive predictions.
+This program can test whether the representation describes the chosen setup and whether it offers a useful way to organize its measurements. Any additional physical claim depends on the outcome of that comparison and independent replication.
 
 ## Attribution, acknowledgments, and provenance
 
-**Conceptual proposal, analogies, research framing and project direction:** João Paulo De Luca Jr., from the research dialogue during 2025–2026. **Mathematical derivations, literature synthesis and manuscript drafting assistance:** ChatGPT (GPT-6, OpenAI). The author retains responsibility for later expert review and corrections. The nonamenability result is credited to OpenAI [1], its exposition to Kim and Lodha [2], Thompson-group representation theory to the relevant cited authors [3–7], and the foundations of photoelectric emission, optical correlations and decoherence to their original researchers [8–11]. This paper claims no independent proof of group nonamenability and no endorsement or collaboration by cited institutions or authors.
+**Conceptual proposal, analogies and research direction:** João Paulo De Luca Jr. The motivating dialogue took place during 2025–2026 [12]. **Mathematical calculations, literature review and drafting assistance:** ChatGPT (OpenAI). The author is responsible for the manuscript and its revisions. The nonamenability result is attributed to OpenAI [1], its exposition to Kim and Lodha [2], and the representation-theoretic and physical foundations to the cited researchers [3–11].
 
-No laboratory experiment, human-subject data, or peer review is reported. The published originating conversation [12] documents conceptual provenance only.
+The shared dialogue [12] records conceptual provenance. It is not used as evidence for a mathematical or physical result. Elementary consistency checks accompany the manuscript in the repository.
 
 ## References
 
@@ -469,3 +453,4 @@ No laboratory experiment, human-subject data, or peer review is reported. The pu
 [11] **Marlan O. Scully and Kai Drühl.** “Quantum eraser: A proposed photon correlation experiment concerning observation and ‘delayed choice’ in quantum mechanics.” *Physical Review A* **25** (1982), 2208–2213. https://doi.org/10.1103/PhysRevA.25.2208
 
 [12] **João Paulo De Luca Jr. and OpenAI ChatGPT.** “Dilatação temporal gravitacional” / *Gravitational time dilation*, research dialogue (2025; discussed again in 2026). [Publicly shared conversation](https://chatgpt.com/share/6af0429d-20f8-83e9-8009-0c52d42af26d). Unpublished and not peer reviewed.
+
